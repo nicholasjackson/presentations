@@ -418,7 +418,7 @@ The paper states that many of the causes of gray failure are...
 ![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/byzantine_2.png)
 
 <!--
-One of the discussed approaches to managing this failure is to apply Byzantine fault tollerance. Moving back to our two generals problem the solution was that each of the liutenants would check the double check the order with the other liutenants.  In this instance should one of the lieutenants be a traitor or should the general themself be a traitor then they would still be able to come to consensus.
+One of the discussed approaches to managing this failure is to apply Byzantine fault tolerance. Moving back to our two generals problem the solution was that each of the lieutenants would check the double check the order with the other lieutenants.  In this instance should one of the lieutenants be a traitor or should the general themselves be a traitor then they would still be able to come to consensus.
 -->
 
 ---
@@ -442,7 +442,7 @@ Unfortunately BFT is not the solution to our problem the paper goes on to state 
 **SUSPICION DIAGRAM**
 
 <!--
-The SWIM paper goes on to describe an approach to handle a situation where it may not be the probed node which is faulty but the probing node.  This mechanisim is called suspicion.  Rather than immediately mark a node as failed, instead the probing node gossips that a node is suspected to have failed. Any node can refute this suspicion and because the suspicion is Gossiped even the node under question will eventually receive this message and can refute the allogation.
+The SWIM paper goes on to describe an approach to handle a situation where it may not be the probed node which is faulty but the probing node.  This mechanism is called suspicion.  Rather than immediately mark a node as failed, instead the probing node gossips that a node is suspected to have failed. Any node can refute this suspicion and because the suspicion is Gossiped even the node under question will eventually receive this message and can refute the allegation.
 -->
 
 ---
@@ -482,7 +482,7 @@ HashiCorp research looked at this problem and published a paper suggesting 3 mod
 * Implement NACKs when asking other nodes to confirm failure
 
 <!--
-The first part of the lifeguard implementation concerns dynamic fault detection.  This allows the probing node to assume that it might be at fault and can modifiy its behaviour accordingly. When a node sends out probes and does not receive a response for more than one probe two, failure cases could be present.  The first is that the system or the network could be experiencing widespread problems, the second and more probable is that the node itself is experiencing transient problems.  When this situation occurs the intervals for probing are modified to slow things down, the timeout for expecting probe responses is also incrased.
+The first part of the lifeguard implementation concerns dynamic fault detection.  This allows the probing node to assume that it might be at fault and can modify its behavior accordingly. When a node sends out probes and does not receive a response for more than one probe two, failure cases could be present.  The first is that the system or the network could be experiencing widespread problems, the second and more probable is that the node itself is experiencing transient problems.  When this situation occurs the intervals for probing are modified to slow things down, the timeout for expecting probe responses is also increased.
 -->
 
 ---
@@ -504,7 +504,7 @@ In addition to this NACKs are implemented, if A requests that B and C probe D be
 * When suspicion messages are received from other nodes regarding a node we already suspect, reduce suspicion timeout
 
 <!--
-Assuming D is actually faulty then other nodes will also start to choose it in a round and eventually A will start to receive their suspicion messages.  Everytime a message is received we reduce the suspicion timeout as the likely hood increases that D is in fact broken.
+Assuming D is actually faulty then other nodes will also start to choose it in a round and eventually A will start to receive their suspicion messages.  Every time a message is received we reduce the suspicion timeout as the likely hood increases that D is in fact broken.
 -->
 
 ---
@@ -515,7 +515,7 @@ Assuming D is actually faulty then other nodes will also start to choose it in a
 **TIMEOUT REDUCTION CHART**
 
 <!--
-The reduction is based on a logarithmic scale, the first reduction is the longest and it decreses with smaller ammounts with every recorded suspicion
+The reduction is based on a logarithmic scale, the first reduction is the longest and it decreases with smaller amounts with every recorded suspicion
 -->
 
 
@@ -539,7 +539,7 @@ Need some text here
 * 98% reduction in false positives
 
 <!--
-The results from the paper have been incredibly positive, a combination of all three of the additions have resulted in a 98% reduction in false positives and an 8% reduction in total network traffic.  This does come at some cost as the latency to detect a failure has also increased by 7% but we feel this has been worth it.  We actually implemented the findings into Consul over 12 months ago so anyone using a Consul version greater than 0.7 will already be taking advantage of this.  In addition to this the paper has been presented succesfully by Jon Currie our Research Director at ... last summer and is currently in the final stages of Academic review.
+The results from the paper have been incredibly positive, a combination of all three of the additions have resulted in a 98% reduction in false positives and an 8% reduction in total network traffic.  This does come at some cost as the latency to detect a failure has also increased by 7% but we feel this has been worth it.  We actually implemented the findings into Consul over 12 months ago so anyone using a Consul version greater than 0.7 will already be taking advantage of this.  In addition to this the paper has been presented successfully by Jon Currie our Research Director at ... last summer and is currently in the final stages of Academic review.
 -->
 
 ---
@@ -547,13 +547,23 @@ The results from the paper have been incredibly positive, a combination of all t
 
 ## Lifeguard - References
 
-* http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-89-1_Epidemic_Algorithms_for_Replicated_Database_Maintenance.pdf
-* https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf
-* https://www.microsoft.com/en-us/research/wp-content/uploads/2017/06/paper-1.pdf
-* https://people.eecs.berkeley.edu/~luca/cs174/byzantine.pdf
+**Epipdemic Algorithms**
+http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-89-1_Epidemic_Algorithms_for_Replicated_Database_Maintenance.pdf
+
+**SWIM**
+https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf
+
+**Gray Failures**
+https://www.microsoft.com/en-us/research/wp-content/uploads/2017/06/paper-1.pdf
+
+**Byzantine Generals Problem**
+https://people.eecs.berkeley.edu/~luca/cs174/byzantine.pdf
+
+**Lifeguard**
+https://arxiv.org/pdf/1707.00788.pdf
 
 <!--
-If you would like to dig in a little deeper and read some of the papers from which I based this talk you can find the references above.  Some of this can make pretty heavy reading but I strongly encourage you to percevier.
+If you would like to dig in a little deeper and read some of the papers from which I based this talk you can find the references above.  Some of this can make pretty heavy reading but I strongly encourage you to persevere.
 -->
 
 
@@ -563,5 +573,5 @@ If you would like to dig in a little deeper and read some of the papers from whi
 ## Lifeguard - Summary
 
 <!--
-Distributed systems are growing in their popularity and the number of nodes which we have in our clusters is also increasing.  I personally find it facinating to dig into the protocols and algorithims which are powering our systems.  I also find it incredibly interesting that a simple protocol designed by a photocopier company for email replication still holds and powers many of our distributed systems 30 years later.
+Distributed systems are growing in their popularity and the number of nodes which we have in our clusters is also increasing.  I personally find it fascinating to dig into the protocols and algorithms which are powering our systems.  I also find it incredibly interesting that a simple protocol designed by a photocopier company for email replication still holds and powers many of our distributed systems 30 years later.
 -->
