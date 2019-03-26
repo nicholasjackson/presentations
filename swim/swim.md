@@ -194,7 +194,7 @@ Ok, that might not have been a true example of the protocol but I think we can s
 -->
 
 ---
-{layout="14 Title at Top"}
+{layout="09 Section Title - Consul"}
 
 # SWIM - Scalable Weakly Consistent Infection-style Process Group Membership
 
@@ -206,7 +206,7 @@ Ok, that might not have been a true example of the protocol but I think we can s
 
 ## SWIM - Scalable Weakly Consistent Infection-style Process Group Membership
 
-![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/swim.png)
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/swim.png){offset-y=100}
 
 <!--
 This paper came out in 2002 from research at Cornell University, the concept was that a methods was needed to maintain a member list of distributed applications in order for them to communicate.
