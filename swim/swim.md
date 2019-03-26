@@ -36,7 +36,7 @@ So Xerox soon find out that it is not so easy replicating select information acr
 
 ## Epidemic Algorithms for Replicated Database Maintenance
 
-**IMAGE OF PAPER**
+![]()
 
 <!--
 This led to a seminal paper Epidemic Algorithms for Replicated Database Maintenance. As the title suggests the motivation behind the paper was how to efficiently replicate the data in a database which is located at a number of sites.  The paper also states that the design of the algorithims must be efficient and that the must be able to scale gracefully.
