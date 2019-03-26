@@ -61,6 +61,13 @@ There were three methods analysed in this paper
 -->
 
 ---
+{layout="09 Section Title - Consul"}
+
+# Gossip?
+
+<!-- -->
+
+---
 {layout="14 Title at Top"}
 
 ## What is Gossip?
@@ -100,9 +107,9 @@ As it turns out the concept of Epidemic propagation of data in distributed syste
 ---
 {layout="14 Title at Top"}
 
-## How Gossip works
+## How Gossip works - Round 1
 
-**ROUND 1 IMAGE**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/gossip_1.png)
 
 <!--
 In order for an informed node to spread its message it picks another node at random, it then distributes the message to that node
@@ -111,9 +118,9 @@ In order for an informed node to spread its message it picks another node at ran
 ---
 {layout="14 Title at Top"}
 
-## How Gossip works
+## How Gossip works - Round 2
 
-**ROUND 2 IMAGE**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/gossip_2.png)
 
 <!--
 In the next round we have two informed nodes, they both pick a node at random
@@ -122,12 +129,23 @@ In the next round we have two informed nodes, they both pick a node at random
 ---
 {layout="14 Title at Top"}
 
-## How Gossip works
+## How Gossip works - Round 3
 
-**ROUND 3 IMAGE**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/gossip_3.png)
 
 <!--
-In the next round we have 4 informed nodes, they all pick a node at random, at the end of this round we can see that now all the nodes are informed of the message.
+In the next round we have 4 informed nodes, they all pick a node at random
+-->
+
+---
+{layout="14 Title at Top"}
+
+## How Gossip works - Round 3
+
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/gossip_4.png)
+
+<!--
+at the end of this round we can see that now all the nodes are informed of the message.
 -->
 
 ---
@@ -153,11 +171,18 @@ Mathematically that is log(8) or the logarithm for the number of nodes divided b
 -->
 
 ---
-{layout="14 Title at Top"}
+{layout="09 Section Title - Consul"}
 
-# DEMO
+# Demo 
 
-Rules:
+<!-- -->
+
+---
+{layout="14 Title at Top Dark"}
+
+## Demo
+
+**Rules:**
 1 When you receive the rumor you are going to tell 1 person at random near by that rumor (behind, in front, left, right)
 1 Once you have passed the rumor repeat step 1
 1 If the person you tell the rumor to has already heard it stop and raise your hand
