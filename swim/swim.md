@@ -25,6 +25,8 @@ Investigation of Lifeguard which builds on SWIM adding many improvements
 
 ## What do photocopies have to do with anything?
 
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/xerox.png)
+
 <!--
 This a little misleading I have to admit, but it does relate to the a certain company who invented the photocopier.  Xerox, you might be aware that Xerox actually founded quite a bit of the tech which we use today, anyone use a mouse on a daily basis?
 Basically in the 1980s Xerox was really interested in solving the future of business problems.  Email was one of these problems and they soon discovered that if you want reliability and the to be able to reach multiple users which are geo-distributed you needed more than one server.
@@ -32,11 +34,11 @@ So Xerox soon find out that it is not so easy replicating select information acr
 -->
 
 ---
-{layout="14 Title at Top"}
+{layout="Blank - Running Section"}
 
 ## Epidemic Algorithms for Replicated Database Maintenance
 
-![]()
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/epidemic.png)
 
 <!--
 This led to a seminal paper Epidemic Algorithms for Replicated Database Maintenance. As the title suggests the motivation behind the paper was how to efficiently replicate the data in a database which is located at a number of sites.  The paper also states that the design of the algorithims must be efficient and that the must be able to scale gracefully.
@@ -45,7 +47,7 @@ This led to a seminal paper Epidemic Algorithms for Replicated Database Maintena
 ---
 {layout="14 Title at Top"}
 
-## The methods analysed
+## Methods analysed
 
 * Direct mail
 * Anti-entropy
@@ -61,7 +63,19 @@ There were three methods analysed in this paper
 ---
 {layout="14 Title at Top"}
 
-## Legacy of epidemic propagation
+## What is Gossip?
+
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/zombie-outbreak.jpg)
+
+<!--
+The concept of gossip communication in computer science is based on real gossiping among humans.  Due to the fact that a biological virus can be spread in the same way as gossip spreads in human communities, this class of protocols is many times epidemic protocols instead of gossip protocols.
+Let's see how this works.
+-->
+
+---
+{layout="14 Title at Top"}
+
+## Epidemic propagation (Gossip)
 
 * Worked well for 3 machines in 1989
 * Still working for 55 machines in 2002
@@ -71,15 +85,6 @@ There were three methods analysed in this paper
 As it turns out the concept of Epidemic propagation of data in distributed systems was incredibly fast and efficient, to the extent that the original concept which was designed for a huge network of machines, say 3 or so, it scaled well the huge 55 machines which defined the test group for the Das Gupta Swim paper and with a little modification as proposed by the Lifeguard paper scales in excess of 5000 nodes.  It is this Swim protocol that we we are going to be concentrating on today however before we look at how swim works we need to understand Gossip.
 -->
 
----
-{layout="14 Title at Top"}
-
-## What is Gossip?
-
-<!--
-The concept of gossip communication in computer science is based on real gossiping among humans.  Due to the fact that a biological virus can be spread in the same way as gossip spreads in human communities, this class of protocols is many times epidemic protocols instead of gossip protocols.
-Let's see how this works.
--->
 
 ---
 {layout="14 Title at Top"}
@@ -489,6 +494,8 @@ The results from the paper have been incredibly positive, a combination of all t
 {layout="14 Title at Top"}
 
 ## Lifeguard - References
+
+* http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-89-1_Epidemic_Algorithms_for_Replicated_Database_Maintenance.pdf
 
 <!--
 If you would like to dig in a little deeper and read some of the papers from which I based this talk you can find the references above.  Some of this can make pretty heavy reading but I strongly encourage you to percevier.
