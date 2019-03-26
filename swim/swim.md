@@ -284,7 +284,7 @@ SWIM takes a different approach for faiure detection, a single node
 
 ## Failure detection with SWIM
 
-**IMAGE PROBE - Ping Ack**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/swim_1.png)
 
 <!--
 Each node chooses another node at random and pings it, in the instance that the node is heathy then it expects to receive an Ack back
@@ -295,7 +295,7 @@ Each node chooses another node at random and pings it, in the instance that the 
 
 ## Failure detection with SWIM
 
-**IMAGE PROBE - Buddy**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/swim_2.png)
 
 <!--
 If no ACK is returned within the timeout then the probing node, selects a number of other nodes and asks them to probe the same node and send the Acks back to it.  The reason the acks are not sent directly back to the probing node is to cater for the fact that the network link between the probing node and the probed might not be stable and the Ack might just have got lost. In the instance that no probe is returned then the probed node will gossip that the has been a failure.
@@ -306,10 +306,30 @@ If no ACK is returned within the timeout then the probing node, selects a number
 
 ## Failure detection with SWIM
 
-**IMAGE PROBE - Gossip overload**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/swim_3.png)
 
 <!--
 One of the problems with this approach is that it is likely that another node will choose to probe the same faulty node and when failure is detected it will also start to Gossip about this failure which can cause an increase in network traffic.
+-->
+
+---
+{layout="14 Title at Top"}
+
+## Failure detection with SWIM
+
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/swim_4.png)
+
+<!--
+-->
+
+---
+{layout="14 Title at Top"}
+
+## Failure detection with SWIM
+
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/swim_5.png)
+
+<!--
 -->
 
 ---
@@ -337,20 +357,30 @@ Another problem with the basic SWIM process is basic SWIM protocol assumes that 
 Byzantine failure is not a fail-stop situation
 -->
 
+
 ---
 {layout="14 Title at Top"}
 
 ## Byzantine failure
 
-**BYZANTINE GENERALS IMAGE**
-
-* Two armies A-B
+* Two armies A and B
 * Need to decide to attack or retreat
 * If they both agree on an approach they win
 * If they disagree then they loose
 
 <!--
 The term comes from the byzantine generals problem called the two generals problem, two generals in the field are fighting a common enemy.  They need to decide whether to attack or to retrieat.  If they both decide to attack then their cumalitve force will overcome the enemy and they will win.  Should they decide the enemy is stronger then both of them and decide to retreat then they live to fight another day.  The problem comes with if they disagree, if one general decides to attack and the other decides to retreat then one of the armies will be wiped out.
+-->
+
+---
+{layout="14 Title at Top"}
+
+## Byzantine failure
+
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/byzantine_1.png)
+
+<!--
+
 -->
 
 ---
@@ -370,7 +400,7 @@ As it turns out Gray Failure in cloud based systems is not so uncommon, in a pap
 
 ## Gray Failure: The Achilles' Heel of Cloud-Scale Systems
 
-* Performance degredation
+* Performance degradation
 * Random packet loss
 * Flaky I/O
 * Memory pressure
@@ -383,9 +413,9 @@ The paper states that many of the causes of gray failure are...
 ---
 {layout="14 Title at Top"}
 
-## Gray Failure: Byzantine fault tollerance
+## Gray Failure: Byzantine fault tolerance
 
-**BFT diagram**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/byzantine_1.png)
 
 <!--
 One of the discussed approaches to managing this failure is to apply Byzantine fault tollerance. Moving back to our two generals problem the solution was that each of the liutenants would check the double check the order with the other liutenants.  In this instance should one of the lieutenants be a traitor or should the general themself be a traitor then they would still be able to come to consensus.
@@ -394,7 +424,7 @@ One of the discussed approaches to managing this failure is to apply Byzantine f
 ---
 {layout="14 Title at Top"}
 
-## Gray Failure: Byzantine fault tollerance
+## Gray Failure: Byzantine fault tolerance
 
 * Complex to implement
 * High network overhead
