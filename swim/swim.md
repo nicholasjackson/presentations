@@ -63,7 +63,7 @@ There were three methods analysed in this paper
 ---
 {layout="09 Section Title - Consul"}
 
-# Gossip?
+# Gossip
 
 <!-- -->
 
@@ -180,12 +180,11 @@ Mathematically that is log(8) or the logarithm for the number of nodes divided b
 ---
 {layout="14 Title at Top Dark"}
 
-## Demo
+## Demo - Rules
 
-**Rules:**
-1 When you receive the rumor you are going to tell 1 person at random near by that rumor (behind, in front, left, right)
-1 Once you have passed the rumor repeat step 1
-1 If the person you tell the rumor to has already heard it stop and raise your hand
+1. When you receive the rumor you are going to select a **random person nearby** (behind, in front, left, right), and **tell them the rumor**
+1. Once you have passed the rumor **repeat step 1**
+1. If the person you tell the rumor to has already heard it **stop and raise your hand**
 
 <!--
 Let's try a little experiment, and we are not going to use code, let's see how fast we can spread an epidemic rumor using you the audience.
@@ -207,9 +206,7 @@ Ok, that might not have been a true example of the protocol but I think we can s
 
 ## SWIM - Scalable Weakly Consistent Infection-style Process Group Membership
 
-* Abhinandas Das, Idranil Gupta, Ashish Motivala
-* Cornel University
-* 2002
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/swim.png)
 
 <!--
 This paper came out in 2002 from research at Cornell University, the concept was that a methods was needed to maintain a member list of distributed applications in order for them to communicate.
@@ -220,7 +217,7 @@ This paper came out in 2002 from research at Cornell University, the concept was
 
 ## Why was SWIM needed?
 
-* network load which grows quaderatically with group size
+* network load which grows quadratically with group size
 * compromised response times
 * false positive frequency with relation to detecting process crashes
 
@@ -233,7 +230,7 @@ The need for such a protocol was based on the facts that traditional heart-beati
 
 ## Why was SWIM needed?
 
-* network load which grows quaderatically with group size
+* network load which grows quadratically with group size
 * compromised response times
 * **false positive frequency with relation to detecting *process crashes***
 
@@ -250,8 +247,8 @@ I would like you to take special note of the following point, specifically, the 
 * Sending heartbeats to all members either through Gossip or Multicast leads to high network load, this grows quadratically with group size O(n<sup>2</sup>) e.g. 4,9,16,25,36
 
 <!--
-When the authors of the SWIM paper first looked at failure detection they looked at two traditional methods of heartbeating.
-The first was where all the nodes send a heartbeat to a central server, this suffered from the problem that with a large number of nodes the hearbeats could cause the central server to overload then therefore the failure detection to be unreliable.  The other process was to use a multi-cast approach by either sending a multi-case network message or by distributing hearbeats via Gossip.  In both of these instances the drawback was increased network load.  The growth of this is quaderatic, or when you double your input your output will be four times as large.
+When the authors of the SWIM paper first looked at failure detection they looked at two traditional methods of heart beating.
+The first was where all the nodes send a heartbeat to a central server, this suffered from the problem that with a large number of nodes the heartbeats could cause the central server to overload then therefore the failure detection to be unreliable.  The other process was to use a multi-cast approach by either sending a multi-case network message or by distributing heartbeats via Gossip.  In both of these instances the drawback was increased network load.  The growth of this is quadratic, or when you double your input your output will be four times as large.
 -->
 
 ---
@@ -521,6 +518,7 @@ The results from the paper have been incredibly positive, a combination of all t
 ## Lifeguard - References
 
 * http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-89-1_Epidemic_Algorithms_for_Replicated_Database_Maintenance.pdf
+* https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf
 
 <!--
 If you would like to dig in a little deeper and read some of the papers from which I based this talk you can find the references above.  Some of this can make pretty heavy reading but I strongly encourage you to percevier.
