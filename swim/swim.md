@@ -51,7 +51,7 @@ This led to a seminal paper Epidemic Algorithms for Replicated Database Maintena
 
 * Direct mail
 * Anti-entropy
-* Rumor mongering
+* Rumor mongering (Gossip)
 
 <!--
 There were three methods analysed in this paper
