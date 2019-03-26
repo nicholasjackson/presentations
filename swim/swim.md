@@ -415,7 +415,7 @@ The paper states that many of the causes of gray failure are...
 
 ## Gray Failure: Byzantine fault tolerance
 
-![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/byzantine_1.png)
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/byzantine_2.png)
 
 <!--
 One of the discussed approaches to managing this failure is to apply Byzantine fault tollerance. Moving back to our two generals problem the solution was that each of the liutenants would check the double check the order with the other liutenants.  In this instance should one of the lieutenants be a traitor or should the general themself be a traitor then they would still be able to come to consensus.
@@ -549,6 +549,8 @@ The results from the paper have been incredibly positive, a combination of all t
 
 * http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-89-1_Epidemic_Algorithms_for_Replicated_Database_Maintenance.pdf
 * https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf
+* https://www.microsoft.com/en-us/research/wp-content/uploads/2017/06/paper-1.pdf
+* https://people.eecs.berkeley.edu/~luca/cs174/byzantine.pdf
 
 <!--
 If you would like to dig in a little deeper and read some of the papers from which I based this talk you can find the references above.  Some of this can make pretty heavy reading but I strongly encourage you to percevier.
