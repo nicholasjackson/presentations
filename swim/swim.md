@@ -335,6 +335,19 @@ One of the problems with this approach is that it is likely that another node wi
 ---
 {layout="14 Title at Top"}
 
+## Why was SWIM needed?
+
+* network load which grows quadratically with group size
+* compromised response times
+* **false positive frequency with relation to detecting *process crashes***
+
+<!--
+Remember we said we would come back to this slide
+-->
+
+---
+{layout="14 Title at Top"}
+
 ## Gray failures
 
 * Much of the process is based on a fail-stop process rather than byzantine failure
