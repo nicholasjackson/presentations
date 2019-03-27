@@ -501,10 +501,21 @@ The first part of the lifeguard implementation concerns dynamic fault detection.
 
 ## Lifeguard - Dynamic fault detection
 
-**IMAGE SHOWING NACKS**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/nack_1.png)
 
 <!--
-In addition to this NACKs are implemented, if A requests that B and C probe D because it has not received an Ack from its own probe then previously B and C would only send a response when the Ack had been received from D.  Lifeguard implements the concept of a NACK, when B and C do not receive an Ack they now send a NACK back to A.  Should A neither receive an Ack or a Nack before the timeout period expires then it can safely assume that the issue is with itself and not with D.
+In addition to this NACKs are implemented, if A requests that B and C probe D because it has not received an Ack from its own probe then previously B and C would only send a response when the Ack had been received from D.  Lifeguard implements the concept of a NACK, when B and C do not receive an Ack they now send a NACK back to A. 
+-->
+
+---
+{layout="14 Title at Top"}
+
+## Lifeguard - Dynamic fault detection
+
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/nack_2.png)
+
+<!--
+Should A neither receive an Ack or a Nack before the timeout period expires then it can safely assume that the issue is with itself and not with D.
 -->
 
 ---
