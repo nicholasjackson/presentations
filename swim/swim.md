@@ -333,6 +333,13 @@ One of the problems with this approach is that it is likely that another node wi
 -->
 
 ---
+{layout="09 Section Title - Consul"}
+
+# Gray failures
+
+<!-- -->
+
+---
 {layout="14 Title at Top"}
 
 ## Why was SWIM needed?
