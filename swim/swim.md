@@ -439,10 +439,21 @@ Unfortunately BFT is not the solution to our problem the paper goes on to state 
 
 ## Gray Failure: SWIM, suspicion
 
-**SUSPICION DIAGRAM**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/suspicion_1.png)
 
 <!--
-The SWIM paper goes on to describe an approach to handle a situation where it may not be the probed node which is faulty but the probing node.  This mechanism is called suspicion.  Rather than immediately mark a node as failed, instead the probing node gossips that a node is suspected to have failed. Any node can refute this suspicion and because the suspicion is Gossiped even the node under question will eventually receive this message and can refute the allegation.
+The SWIM paper goes on to describe an approach to handle a situation where it may not be the probed node which is faulty but the probing node.  This mechanism is called suspicion.  Rather than immediately mark a node as failed, instead the probing node gossips that a node is suspected to have failed. 
+-->
+
+---
+{layout="14 Title at Top"}
+
+## Gray Failure: SWIM, suspicion
+
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/suspicion_2.png)
+
+<!--
+Any node can refute this suspicion and because the suspicion is Gossiped even the node under question will eventually receive this message and can refute the allegation.
 -->
 
 ---
