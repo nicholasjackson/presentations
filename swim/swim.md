@@ -534,7 +534,7 @@ Assuming D is actually faulty then other nodes will also start to choose it in a
 
 ## Lifeguard - Dynamic suspicion timeouts
 
-**TIMEOUT REDUCTION CHART**
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/dynamic_timeouts.png)
 
 <!--
 The reduction is based on a logarithmic scale, the first reduction is the longest and it decreases with smaller amounts with every recorded suspicion
