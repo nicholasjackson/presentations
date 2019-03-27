@@ -469,6 +469,13 @@ In the original paper SWIM was only tested on 55 nodes, at the time this was a l
 -->
 
 ---
+{layout="09 Section Title - Consul"}
+
+# Lifeguard
+
+<!-- -->
+
+---
 {layout="14 Title at Top"}
 
 ## Lifeguard - beyond SWIM
@@ -534,7 +541,7 @@ Assuming D is actually faulty then other nodes will also start to choose it in a
 
 ## Lifeguard - Dynamic suspicion timeouts
 
-![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/dynamic_timeouts.png)
+![](https://raw.githubusercontent.com/nicholasjackson/presentations/master/swim/images/dynamic_timeout.png)
 
 <!--
 The reduction is based on a logarithmic scale, the first reduction is the longest and it decreases with smaller amounts with every recorded suspicion
@@ -555,7 +562,7 @@ Need some text here
 
 ## Lifeguard - Results
 
-* 7% increse in latency under normal conditions
+* 7% increase in latency under normal conditions
 * 12% increase in messages
 * 8% total reduction in network traffic due to piggy backed messages
 * 98% reduction in false positives
@@ -569,7 +576,7 @@ The results from the paper have been incredibly positive, a combination of all t
 
 ## Lifeguard - References
 
-**Epipdemic Algorithms**
+**Epidemic Algorithms**
 http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-89-1_Epidemic_Algorithms_for_Replicated_Database_Maintenance.pdf
 
 **SWIM**
